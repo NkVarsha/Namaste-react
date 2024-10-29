@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div id="root1">HelloWorld from HTML</div>
+    <div id="root2"></div>
+    <script>
+        const heading1=document.createElement("h1");
+        heading1.innerHTML="Hello World from JavaScript";
+        const root2= document.getElementById("root2");
+        root2.appendChild(heading1);
+    </script>
+
+    <div id="root3"></div>
+    <div id="root4">
+        <h6>h6 tag</h6>
+    </div>
+
+ 
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+
+    <script>
+        const heading3= React.createElement("h1",{},"Hello World React from html file");
+        const root3 = ReactDOM.createRoot(document.getElementById("root3"));
+        root3.render(heading3);
+    </script>
+    <script src="./App.js"></script>
+</body>
+</html>
