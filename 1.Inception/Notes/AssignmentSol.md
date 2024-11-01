@@ -35,6 +35,7 @@ Output:
 The crossorigin attribute in a <script> tag tells the browser how to handle scripts that are loaded from a different website or server. It’s useful when loading scripts from places like CDNs (content delivery networks) or third-party sources.
 
 Here's what the crossorigin options do:
+
 **1.anonymous:** Loads the script without sending any extra login information (like cookies) along with the request. This is good for most public scripts where you don’t need special permissions.
 ```js
 <script src="https://example.com/script.js" crossorigin="anonymous"></script>
