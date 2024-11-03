@@ -182,3 +182,53 @@ Instead, add `node_modules` to your `.gitignore` file to keep the repository cle
 
 ## Ques): What is `browserslist`?
 **Ans:** `Browserslist` is a tool that allows specifying which browsers should be supported in your frontend app by specifying "queries" in a config file. It's used by frameworks/libraries such as React, Angular and Vue, but it's not limited to them.
+
+## Ques): Different Bundlers
+| Feature                   | Vite                               | Parcel                          | Webpack                    |
+|---------------------------|------------------------------------|---------------------------------|----------------------------|
+| **Configuration**         | Minimal                           | Zero-configuration              | Highly configurable        |
+| **Development Speed**     | Fastest (no bundling in dev)      | Fast                            | Slower in dev              |
+| **Production Build**      | Uses Rollup for bundling          | Automatic code splitting        | Highly optimized but complex |
+| **Ecosystem**             | Growing                           | Limited                         | Extensive                  |
+| **Ease of Use**           | Easy                              | Easiest                         | Moderate to Complex        |
+| **Ideal for**             | Fast, modern web apps             | Simple to medium complexity     | Large-scale applications   |
+
+
+
+## Ques): Script types in html
+
+### 1. Default JavaScript
+If you use `<script>` without a `type` attribute or set `type="text/javascript"`, it defaults to JavaScript. This is the standard way to include JavaScript code in your HTML.
+
+```html
+<script src="script.js"></script>
+```
+
+### 2. Module Scripts
+When you use `type="module"` in your `<script>` tag, the browser treats the script as an ES6 module. This means you can use `import` and `export` statements within that script. Modules are loaded asynchronously, which helps improve page performance.
+
+```html
+<script type="module">
+    import { myFunction } from './myModule.js';
+    myFunction();
+</script>
+```
+
+### 3. Import Maps
+You can also use `type="importmap"` to define how module paths resolve. This is useful for specifying where the browser should look for the modules you import.
+
+```html
+<script type="importmap">
+    {
+        "imports": {
+            "myModule": "/path/to/myModule.js"
+        }
+    }
+</script>
+```
+
+### 4. Other Types
+There are other script types like `type="application/json"` to embed JSON data, which is useful for passing configuration or data without executing it as code.
+
+#### Summary
+This flexibility helps developers manage and structure their JavaScript code better. 
